@@ -1,0 +1,217 @@
+@charset "UTF-8";
+body {
+  background: #101010;
+}
+
+.bg-dark-sw {
+  background: rgba(16, 16, 16, 0.872);
+  -webkit-box-shadow: 0px 2px 15px 5px black;
+          box-shadow: 0px 2px 15px 5px black;
+}
+
+.hero {
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .title {
+  position: relative;
+  top: 30vh;
+  color: #aba3a3;
+  font-size: 0.9rem;
+}
+
+.hero .title .title-main {
+  font-size: 4.5rem;
+  color: #cec8c8;
+}
+
+.hero .title .btn {
+  text-transform: none;
+}
+
+.hero .hero-bt-fade {
+  position: absolute;
+  top: 98vh;
+  min-height: 2vh;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#101010));
+  background: linear-gradient(rgba(255, 255, 255, 0), #101010);
+}
+
+.header-vid {
+  position: absolute;
+  width: 100%;
+  /* max-width: 100vw; */
+  height: 100vh;
+  /* max-height: 120vh; */
+  z-index: -4;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.posters {
+  padding: 0 10px;
+  margin: 0;
+  background: #0e0f1100;
+  color: #ecf0f1;
+  font-family: 'Open Sans', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+  top: -30vh;
+}
+
+.posters h5 {
+  position: relative;
+  top: 70.3125px;
+}
+
+.posters .contain {
+  width: 100%;
+}
+
+.posters .row {
+  overflow: scroll;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.posters .row::-webkit-scrollbar {
+  display: none;
+}
+
+.posters .row__inner {
+  z-index: 5;
+  -webkit-transition: 450ms -webkit-transform;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70.3125px 0;
+  padding-bottom: 10px;
+}
+
+.posters .tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.posters .tile__img {
+  width: 250px;
+  height: 140.625px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.posters .tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+}
+
+.posters .tile__details:after .posters .tile__details:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: black;
+}
+
+.posters .tile__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.posters .tile__details:before {
+  content: '▶';
+  left: 0;
+  width: 100%;
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: -18px;
+  text-align: center;
+  z-index: 2;
+}
+
+.tile:hover .posters .tile__details {
+  opacity: 1;
+}
+
+.posters .tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+.posters .row__inner:hover {
+  -webkit-transform: translate3d(-62.5px, 0, 0);
+          transform: translate3d(-62.5px, 0, 0);
+}
+
+.posters .row__inner:hover .tile {
+  opacity: .3;
+}
+
+.posters .row__inner:hover .tile:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+}
+
+.posters .tile:hover ~ .tile {
+  -webkit-transform: translate3d(125px, 0, 0);
+          transform: translate3d(125px, 0, 0);
+}
+
+.bg-none {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+footer .link-ftr {
+  color: #a49d9d;
+}
+
+footer .link-ftr i {
+  color: #a49d9d;
+}
+/*# sourceMappingURL=main.css.map */

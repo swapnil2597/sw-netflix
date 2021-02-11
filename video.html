@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Sw-Netflix | Home</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/logo.PNG" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./node_modules/plyr/dist/plyr.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <style></style>
+    <!-- <script type=”text/javascript” src=”//cdn.jsdelivr.net/afterglow/latest/afterglow.min.js”></script> -->
+  </head>
+  <body>
+    <!-- Start your project here-->
+    <!-- Just an image -->
+     
+
+      
+
+      <div class="w-100" >
+        <video id="player" playsinline controls data-poster="./lib/poster-passengers.PNG">
+            <source src="./lib/Passengers.2016.720p.BluRay.x264-[YTS.AG]_[@â€ â€ !Â¢ÂµÂ§â„¢]_.mp4" type="video/mp4" />
+            <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
+          
+            <!-- Captions are optional -->
+            <track kind="captions" label="English captions" src="./lib/Passengers.2016.720p.BluRay.x264-[YTS.AG].srt" srclang="en" default />
+          </video>
+
+
+        <!-- <img src="./img/bg-main.jpg" alt="" class="img-fluid"> -->
+        
+        <!-- <video autoplay controls src="./vid/leaves.mp4" class="header-vid"></video> -->
+        
+      </div>
+    <!-- End your project here-->
+
+    <script src="./node_modules/plyr/dist/plyr.js"></script>
+    <script>
+    const player = new Plyr('#player');
+    </script>
+
+  </body>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript">
+  var button = document.getElementById('code-button'); 
+    button.onclick = function() {
+      var div = document.getElementById('code-success');
+      if (div.style.display !== 'none') {
+          div.style.display = 'none';
+      }
+      else {
+          div.style.display = 'block';
+      }
+    };
+
+    function copy(text) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+
+    // Ad counter
+    // Set the date we're counting down to
+    var countDownDate = new Date(Date.UTC(2020, 09, 30, 10, 00, 00));
+    var counterElement = document.getElementById('time-counter');
+
+    // Update the count down every 1 second
+    function startCounter() {
+      //wrapped in an if to prevent console errors if the element isn't found on the page
+      if (counterElement == null) {
+        return;
+      } else {
+        var x = setInterval(function () {
+          // Get todays date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the result in the element with id="demo"
+          counterElement.innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById('time-counter').innerHTML =
+              '<p class="h3 grey-text">Sale ended :(</p>';
+          }
+        }, 1000);
+      }
+    }
+    startCounter();
+  </script>
+</html>
